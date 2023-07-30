@@ -3,19 +3,20 @@ import { useDispatch } from "react-redux";
 import "./Cart.css";
 import { cartActions } from "../store/cart-slice";
 const CartItem = ({ name, quantity, total, price, id }) => {
+  
   const dispatch = useDispatch();
   const removeHandler = () => {
-    dispatch(cartActions.removeFromCart(id));
-  };
+    dispatch(cartActions.removeFromCart(id))
+  }
+
   const addHandler = () => {
-    dispatch(
-      cartActions.addToCart({
-        id,
-        name,
-        price,
-      })
-    );
-  };
+    dispatch(cartActions.addToCart({
+      id,
+      name,
+      price,
+    })
+    )
+  }
   return (
     <div className="cartItem">
       <h2> {name}</h2>
