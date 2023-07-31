@@ -4,6 +4,7 @@ import "./Cart.css";
 import { useSelector } from "react-redux";
 const CartItems = () => {
   const cartItems = useSelector((state) => state.cart.itemList)
+  
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import Header from "./Header";
 import Products from "./Products";
 import "./Layout.css";
@@ -8,10 +8,11 @@ const Layout = () => {
   let total = 0;
 
   const itemList = useSelector((state) => state.cart.itemList)
+  console.log(itemList)
 
-  itemList.forEach(item => {
+  itemList?.forEach(item => (
     total += item.totalPrice
-  });
+  ));
 
   const showCart = useSelector((state) => state.cart.showCart)
   return (

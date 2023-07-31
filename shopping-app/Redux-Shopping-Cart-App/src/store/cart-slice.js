@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { uiActions } from "./ui-slice";
 
 
 const cartSlice = createSlice({
@@ -9,6 +10,10 @@ const cartSlice = createSlice({
         showCart: false,
     },
     reducers: {
+        replaceData(state,action){
+            state.totalQuantity = action.payload.totalPrice;
+            state.itemList = action.payload.itemList
+        },
         addToCart(state,action){
             const newItem = action.payload;
 
@@ -48,6 +53,8 @@ const cartSlice = createSlice({
     }
 
 })
+
+
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;
